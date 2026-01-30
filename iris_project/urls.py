@@ -18,16 +18,14 @@ Including another URLconf
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from rest_framework.routers import DefaultRouter
-
-# DİKKAT: views.py 'main' klasöründe olduğu için 'main'den import ediyoruz
 from main import views 
 
-# API Router Tanımlaması
+# API Router 
 router = DefaultRouter()
 router.register(r'api/plants', views.IrisPlantViewSet)
 
 urlpatterns = [
-    # --- Sayfa Yönlendirmeleri ---
+    # --- Page Redirects ---
     path('', views.list_view, name='list_view'),
     path('list.html', views.list_view, name='list_html'),
     path('add.html', views.add_view, name='add_view'),
@@ -35,25 +33,26 @@ urlpatterns = [
     path('predict.html', views.predict_view, name='predict_view'),
     path('register.html', views.register_view, name='register_view'),
     
-    # --- Kullanıcı İşlemleri (Login/Logout/Register) ---
+    # --- User Actions (Login/Logout/Register) ---
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
     path('register/', views.register_view, name='register_view'),
 
-    # --- Şifre Sıfırlama (Ödev Gereksinimi) ---
+    # --- Password Reset ---
     path('password-reset/', auth_views.PasswordResetView.as_view(template_name='password_reset.html'), name='password_reset'),
     path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'), name='password_reset_done'),
     path('password-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'), name='password_reset_confirm'),
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'), name='password_reset_complete'),
 
-    # --- İşlevsel Yönlendirmeler (CRUD & CSV) ---
+    # --- Functional Directions (CRUD & CSV) ---
     path('add/', views.add_view, name='add_view_func'), # Fonksiyonel path
-    path('update/<int:id>/', views.update_view, name='update_view'), # Güncelleme
-    path('delete/<int:id>/', views.delete_view, name='delete_view'), # Silme
-    path('export/', views.export_iris_csv, name='export_iris_csv'), # CSV İndir
-    path('import/', views.import_iris_csv, name='import_iris_csv'), # CSV Yükle
-    path('predict/', views.predict_view, name='predict_view_func'), # Tahmin POST
+    path('update/<int:id>/', views.update_view, name='update_view'), # Update
+    path('delete/<int:id>/', views.delete_view, name='delete_view'), # Delete
+    path('export/', views.export_iris_csv, name='export_iris_csv'), # Download CSV
+    path('import/', views.import_iris_csv, name='import_iris_csv'), # Upload CSV
+    path('predict/', views.predict_view, name='predict_view_func'), 
 
-    # --- API URL'leri ---
+    # --- API URLs ---
     path('', include(router.urls)),
 ]
+
