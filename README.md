@@ -8,7 +8,7 @@ This application integrates a **Machine Learning model** into the **Django** fra
 ## 🛠️ Tech Stack
 * **Framework:** Django (Python)
 * **Machine Learning:** Scikit-Learn, Pandas, NumPy
-* **Frontend:** HTML5, CSS3, Bootstrap
+* **Frontend:** HTML5, CSS3
 * **Database:** SQLite (for user and entry management)
 
 ## ⚙️ Core Features
@@ -18,7 +18,13 @@ This application integrates a **Machine Learning model** into the **Django** fra
 * **Real-time Prediction:** Instant classification using a pre-trained ML model.
 
 ## 👥 Collaborative Work
-This was a group project where I specifically focused on:
-* Developing the **Django backend** architecture.
-* Implementing the **CSV import/export** logic.
-* Integrating the **ML model** into the web views.
+This was a group project developed by 4 members. I specifically focused on:
+* Developing the Django backend architecture.
+* Implementing the CSV import/export logic.
+* Integrating the ML model into the web views.
+
+Team Members
+Züleyha DEMİR
+Aslı Sudenur ŞAHİN
+Beyza Nur Ulukuş
+Pınar Erva Gündağ
