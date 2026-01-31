@@ -24,7 +24,7 @@ This was a group project developed by 4 members. I specifically focused on:
 * Integrating the ML model into the web views.
 
 Team Members
-Züleyha DEMİR
-Aslı Sudenur ŞAHİN
-Beyza Nur Ulukuş
-Pınar Erva Gündağ
+* Züleyha DEMİR
+* Aslı Sudenur ŞAHİN
+* Beyza Nur Ulukuş
+* Pınar Erva Gündağ
