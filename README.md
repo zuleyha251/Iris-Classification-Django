@@ -18,10 +18,7 @@ This application integrates a **Machine Learning model** into the **Django** fra
 * **Real-time Prediction:** Instant classification using a pre-trained ML model.
 
 ## 👥 Collaborative Work
-This was a group project developed by 4 members. I specifically focused on:
-* Developing the Django backend architecture.
-* Implementing the CSV import/export logic.
-* Integrating the ML model into the web views.
+This was a group project developed by 4 members. 
 
 Team Members
 * Züleyha DEMİR
